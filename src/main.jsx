@@ -18,6 +18,11 @@ const router = createBrowserRouter([
         path: '/meals',
         loader : () => fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s`),
         element: <Meals></Meals>
+      },
+      {
+        path: '/meal/:strMeal',
+        loader : (params) => fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${params.params.strMeal}`),
+        element: <Meals></Meals>
       }
     ]
   },
