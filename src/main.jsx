@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import Home from './Components/Home/Home.jsx';
 import Meals from './Components/Meals/Meals.jsx';
 import Error from './Components/Error/Error.jsx';
+import MealDetails from './Components/MealDetails/MealDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
       {
         path: '/meal/:strMeal',
         loader : (params) => fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${params.params.strMeal}`),
-        element: <Meals></Meals>
+        element: <MealDetails></MealDetails>
       }
     ]
   },

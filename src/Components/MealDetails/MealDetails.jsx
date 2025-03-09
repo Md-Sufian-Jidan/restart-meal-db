@@ -1,16 +1,17 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const MealDetails = () => {
     const meal = useLoaderData();
+    const navigate = useNavigate();
     // console.log(meal)
-    const {meals} = meal;
+    const { meals } = meal;
     // console.log(meals)
     const [mealDetails] = meals;
     console.log(mealDetails)
-    const {strMeal, strArea , strInstructions , strCategory ,strSource , strYoutube} = mealDetails;
+    const { strMeal, strArea, strInstructions, strCategory, strSource, strYoutube } = mealDetails;
     // console.log(meals.strArea)
     const handleGoBack = () => {
-        
+        navigate(-1);
     }
     return (
         <div>
