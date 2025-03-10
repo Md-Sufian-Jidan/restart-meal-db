@@ -8,6 +8,7 @@ import Home from './Components/Home/Home.jsx';
 import Meals from './Components/Meals/Meals.jsx';
 import Error from './Components/Error/Error.jsx';
 import MealDetails from './Components/MealDetails/MealDetails.jsx';
+import Photos from './Components/Photos/Photos.jsx';
 
 const router = createBrowserRouter([
   {
@@ -17,13 +18,18 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/meals',
-        loader : () => fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s`),
+        loader: () => fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s`),
         element: <Meals></Meals>
       },
       {
         path: '/meal/:strMeal',
-        loader : (params) => fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${params.params.strMeal}`),
+        loader: (params) => fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${params.params.strMeal}`),
         element: <MealDetails></MealDetails>
+      },
+      {
+        path: '/photos',
+        loader: () => fetch(`https://jsonplaceholder.typicode.com/photos`),
+        element: <Photos></Photos>
       }
     ]
   },

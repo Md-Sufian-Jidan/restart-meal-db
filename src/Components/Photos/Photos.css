@@ -1,0 +1,8 @@
+.photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    border: 2px solid green;
+    border-radius: 20px;
+    padding: 10px;
+}
