@@ -9,6 +9,7 @@ import Meals from './Components/Meals/Meals.jsx';
 import Error from './Components/Error/Error.jsx';
 import MealDetails from './Components/MealDetails/MealDetails.jsx';
 import Photos from './Components/Photos/Photos.jsx';
+import PhotoDetails from './Components/PhotoDetails/PhotoDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,12 @@ const router = createBrowserRouter([
         path: '/photos',
         loader: () => fetch(`https://jsonplaceholder.typicode.com/photos`),
         element: <Photos></Photos>
-      }
+      },
+      {
+        path: '/photo/:id',
+        loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/photos/${params.id}`),
+        element: <PhotoDetails></PhotoDetails>
+      },
     ]
   },
 ]);
