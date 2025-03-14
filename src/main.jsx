@@ -11,6 +11,7 @@ import MealDetails from './Components/MealDetails/MealDetails.jsx';
 import Photos from './Components/Photos/Photos.jsx';
 import PhotoDetails from './Components/PhotoDetails/PhotoDetails.jsx';
 import Todos from './Components/Todos/Todos.jsx';
+import Comments from './Components/Comments/Comments.jsx';
 
 const router = createBrowserRouter([
   {
@@ -35,13 +36,18 @@ const router = createBrowserRouter([
       },
       {
         path: '/photo/:id',
-        loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/photos/${params.id}`),
+        loader: ({ params }) => fetch(`https://jsonplaceholder.typicode.com/photos/${params.id}`),
         element: <PhotoDetails></PhotoDetails>
       },
       {
         path: '/todos',
         loader: () => fetch('https://jsonplaceholder.typicode.com/todos'),
         element: <Todos></Todos>
+      },
+      {
+        path: '/comments',
+        loader: () => fetch('https://jsonplaceholder.typicode.com/comments'),
+        element: <Comments></Comments>
       },
     ]
   },
